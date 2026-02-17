@@ -74,6 +74,8 @@ const milestones = [
   },
 ]
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export function UeberMichContent() {
   return (
     <>
@@ -151,7 +153,7 @@ export function UeberMichContent() {
             >
               <div className="aspect-[3/4] max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/thaddaeus-bohne.jpg"
+                  src={`${basePath}/images/thaddaeus-bohne.jpg`}
                   alt="Thaddäus Bohne - Microsoft Dynamics 365 Berater"
                   width={600}
                   height={800}
@@ -171,7 +173,7 @@ export function UeberMichContent() {
       <section className="relative overflow-hidden">
         <div className="relative h-48 sm:h-56 lg:h-64">
           <Image
-            src="/images/automotive-banner.png"
+            src={`${basePath}/images/automotive-banner.png`}
             alt="Dynamics 365 CRM für die Automobilbranche"
             fill
             className="object-cover"

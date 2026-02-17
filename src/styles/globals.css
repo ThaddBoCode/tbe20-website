@@ -6,16 +6,16 @@
 /* ── ZF Prometo (lokaler Font) ───────────────── */
 @font-face {
   font-family: 'ZF Prometo';
-  src: url('/fonts/ZFPrometo-Light.woff2') format('woff2'),
-       url('/fonts/ZFPrometo-Light.woff') format('woff');
+  src: url('/tbe20-website/fonts/ZFPrometo-Light.woff2') format('woff2'),
+       url('/tbe20-website/fonts/ZFPrometo-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ZF Prometo';
-  src: url('/fonts/ZFPrometo-Medium.woff2') format('woff2'),
-       url('/fonts/ZFPrometo-Medium.woff') format('woff');
+  src: url('/tbe20-website/fonts/ZFPrometo-Medium.woff2') format('woff2'),
+       url('/tbe20-website/fonts/ZFPrometo-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;

@@ -1,10 +1,15 @@
 import type { NextConfig } from 'next'
 
+const basePath = '/tbe20-website'
+
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/tbe20-website',
+  basePath,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 }
 

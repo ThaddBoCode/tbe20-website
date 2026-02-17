@@ -1,0 +1,148 @@
+/* ── FONT IMPORTS ─────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+/* ── ZF Prometo (lokaler Font) ───────────────── */
+@font-face {
+  font-family: 'ZF Prometo';
+  src: url('/fonts/ZFPrometo-Light.woff2') format('woff2'),
+       url('/fonts/ZFPrometo-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ZF Prometo';
+  src: url('/fonts/ZFPrometo-Medium.woff2') format('woff2'),
+       url('/fonts/ZFPrometo-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── THEME (Standard-Farben + Font) ──────────── */
+/* Standard: Stahlblau – abgeleitet vom Profilbild-Sakko */
+@theme {
+  --color-primary-50: #f0f5fa;
+  --color-primary-100: #dae6f2;
+  --color-primary-200: #b8cfe5;
+  --color-primary-300: #8bb3d4;
+  --color-primary-400: #6096c0;
+  --color-primary-500: #3d7ab0;
+  --color-primary-600: #2f6294;
+  --color-primary-700: #274f78;
+  --color-primary-800: #1f3f60;
+  --color-primary-900: #182f48;
+
+  --color-dark: #0f172a;
+  --color-dark-light: #1e293b;
+
+  /* Standard-Font: Inter (wird vom Theme-Switcher überschrieben) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── GLOBAL STYLES ───────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.geometric-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, var(--color-primary-500, rgba(13, 148, 136, 0.05)) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--color-primary-500, rgba(13, 148, 136, 0.08)) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, var(--color-primary-500, rgba(13, 148, 136, 0.03)) 0%, transparent 50%);
+}
+
+/* ── THEME-SWITCHER: Farbschema-Overrides per data-Attribut ── */
+
+/* Stahlblau (Standard – keine Overrides nötig, passt zum Profilbild-Sakko) */
+
+/* Himmelblau – heller, wie der Foto-Hintergrund */
+[data-theme="sky"] {
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0efff;
+  --color-primary-200: #b9dafe;
+  --color-primary-300: #7cbffc;
+  --color-primary-400: #4ba3f5;
+  --color-primary-500: #2389e3;
+  --color-primary-600: #1a6ec2;
+  --color-primary-700: #17589e;
+  --color-primary-800: #154a82;
+  --color-primary-900: #133c6b;
+}
+
+/* Ozean – professionell, tiefblau */
+[data-theme="ocean"] {
+  --color-primary-50: #eef4fb;
+  --color-primary-100: #d4e4f7;
+  --color-primary-200: #a8c9ef;
+  --color-primary-300: #6da5e0;
+  --color-primary-400: #3d82cc;
+  --color-primary-500: #1b5fad;
+  --color-primary-600: #154c8e;
+  --color-primary-700: #123d72;
+  --color-primary-800: #10325d;
+  --color-primary-900: #0d274a;
+}
+
+/* Anthrazit – elegant, wie das Sakko */
+[data-theme="charcoal"] {
+  --color-primary-50: #f4f5f7;
+  --color-primary-100: #e3e6ea;
+  --color-primary-200: #c7ced6;
+  --color-primary-300: #9eaab8;
+  --color-primary-400: #738496;
+  --color-primary-500: #4e5d6e;
+  --color-primary-600: #404d5c;
+  --color-primary-700: #353f4c;
+  --color-primary-800: #2b3340;
+  --color-primary-900: #232935;
+}
+
+/* Petrol – Blau-Grün, professionell und modern */
+[data-theme="petrol"] {
+  --color-primary-50: #edf5f5;
+  --color-primary-100: #d3e8e8;
+  --color-primary-200: #a3d0d0;
+  --color-primary-300: #6bb2b4;
+  --color-primary-400: #439196;
+  --color-primary-500: #2a7278;
+  --color-primary-600: #225c62;
+  --color-primary-700: #1c4a4f;
+  --color-primary-800: #173c40;
+  --color-primary-900: #132f33;
+}
+
+/* Bernstein – warmer Kontrast, elegant */
+[data-theme="amber"] {
+  --color-primary-50: #fdf8ef;
+  --color-primary-100: #f9edd3;
+  --color-primary-200: #f2d8a3;
+  --color-primary-300: #e8be6a;
+  --color-primary-400: #dfa23e;
+  --color-primary-500: #c6851e;
+  --color-primary-600: #a66c18;
+  --color-primary-700: #875516;
+  --color-primary-800: #6e4516;
+  --color-primary-900: #5a3814;
+}
+
+/* ── FONT-SWITCHER: Font-Overrides per data-Attribut ── */
+[data-font="prometo"] {
+  --font-sans: "ZF Prometo", ui-sans-serif, system-ui, sans-serif;
+}
+[data-font="inter"] {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}

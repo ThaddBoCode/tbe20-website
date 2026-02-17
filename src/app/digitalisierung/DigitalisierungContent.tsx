@@ -14,6 +14,9 @@ import {
   Shield,
   CheckCircle,
   MapPin,
+  Building2,
+  Award,
+  Clock,
 } from 'lucide-react'
 
 const steps = [
@@ -101,7 +104,8 @@ export function DigitalisierungContent() {
               className="text-lg text-gray-600 mb-8"
             >
               Professionelle Digitalisierung Ihrer Akten und Dokumente &ndash; DSGVO-konform,
-              revisionssicher und auf Wunsch direkt bei Ihnen vor Ort.
+              revisionssicher und auf Wunsch direkt bei Ihnen vor Ort. In Zusammenarbeit mit
+              unserem Partner A8 Medienservice GmbH (Berlin), an dem TBe20 beteiligt ist.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -115,6 +119,50 @@ export function DigitalisierungContent() {
               </Button>
             </motion.div>
           </div>
+        </Container>
+      </section>
+
+      {/* Partner: A8 Medienservice */}
+      <section className="py-16 lg:py-20 bg-white border-b border-gray-100">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-primary-50 to-primary-100/50 border border-primary-200 p-8 lg:p-10"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-12 h-12 bg-primary-200 rounded-xl flex items-center justify-center shrink-0">
+                <Building2 className="w-6 h-6 text-primary-700" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-primary-500 uppercase tracking-wider mb-1">
+                  Unser Partner
+                </p>
+                <h3 className="text-xl font-bold text-gray-900">A8 Medienservice GmbH, Berlin</h3>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Wir arbeiten nicht mit einem beliebigen externen Dienstleister &ndash; die TBe20 Solutions
+              ist an der A8 Medienservice GmbH beteiligt. Seit 2013 ist die A8 Medienservice als
+              professioneller Scan-Dienstleister bundesweit im Einsatz und steht für Qualität,
+              Datenschutz und Zuverlässigkeit.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <Award className="w-4 h-4 text-primary-500 shrink-0" />
+                DIN ISO 9001:2015 zertifiziert
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <Shield className="w-4 h-4 text-primary-500 shrink-0" />
+                BSI TR-RESISCAN konform
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <Clock className="w-4 h-4 text-primary-500 shrink-0" />
+                Bundesweit innerhalb 48h
+              </div>
+            </div>
+          </motion.div>
         </Container>
       </section>
 

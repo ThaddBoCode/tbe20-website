@@ -20,7 +20,7 @@ const services = [
     icon: Cloud,
     title: 'Salesforce',
     description:
-      'CRM-Migration von Dynamics 365 zu Salesforce, Sales Cloud und Datenintegration. Aktuell im Einsatz bei der Automotive Solution bei ZF.',
+      'CRM-Migration von Dynamics 365 zu Salesforce, Sales Cloud und Datenintegration. Aktuell im Einsatz bei einem führenden Automotive-Konzern.',
     href: '/salesforce',
     features: ['CRM-Migration', 'Sales Cloud', 'Datenintegration'],
   },
@@ -36,9 +36,9 @@ const services = [
     icon: FileText,
     title: 'Dokumenten-Digitalisierung',
     description:
-      'Professionelle Digitalisierung Ihrer Akten und Dokumente. DSGVO-konform, revisionssicher und mit optionalem Vor-Ort-Service.',
+      'Professionelle Digitalisierung Ihrer Akten und Dokumente in Zusammenarbeit mit unserem ISO-zertifizierten Partner A8 Medienservice (Berlin).',
     href: '/digitalisierung',
-    features: ['Scan-Service', 'DSGVO-konform', 'Mobiler Service'],
+    features: ['ISO 9001 zertifiziert', 'BSI TR-RESISCAN', 'Bundesweit mobil'],
   },
 ]
 

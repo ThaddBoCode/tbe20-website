@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TBe20 Solutions GmbH – E-Mail-Signatur</title>
+  <style>
+    /* Nur für die Vorschau-Seite */
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 24px;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0;
+    }
+
+    .preview-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 32px;
+      max-width: 620px;
+      width: 100%;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: center;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .hint code {
+      background: #f3f4f6;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>E-Mail-Signatur Vorschau</h2>
+
+  <div class="preview-box">
+    <!-- =====================================================
+         AB HIER KOPIEREN FÜR E-MAIL-CLIENT
+         ===================================================== -->
+    <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Segoe UI', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; color: #374151;">
+      <tr>
+        <td style="padding-right: 16px; vertical-align: top; border-right: 2px solid #3d7ab0;">
+          <!-- Logo als Text (funktioniert überall) -->
+          <div style="font-size: 22px; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; white-space: nowrap;">
+            TBe<span style="color: #3d7ab0;">20</span>
+          </div>
+          <div style="font-size: 7px; color: #9ca3af; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 1px;">
+            Solutions GmbH
+          </div>
+        </td>
+        <td style="padding-left: 16px; vertical-align: top;">
+          <!-- Name & Rolle -->
+          <div style="font-size: 14px; font-weight: 600; color: #111827;">
+            Thaddäus Bohne
+          </div>
+          <div style="font-size: 11px; color: #3d7ab0; margin-bottom: 8px;">
+            Geschäftsführer &middot; CRM-Berater
+          </div>
+
+          <!-- Kontakt -->
+          <table cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; color: #6b7280; line-height: 1.7;">
+            <tr>
+              <td style="padding-right: 6px; color: #3d7ab0; font-size: 11px;">&#9993;</td>
+              <td><a href="mailto:info@tbe20.com" style="color: #374151; text-decoration: none;">info@tbe20.com</a></td>
+            </tr>
+            <tr>
+              <td style="padding-right: 6px; color: #3d7ab0; font-size: 11px;">&#9742;</td>
+              <td style="color: #374151;">+49 (0) 7531 XXXXXXX</td>
+            </tr>
+            <tr>
+              <td style="padding-right: 6px; color: #3d7ab0; font-size: 11px;">&#127760;</td>
+              <td><a href="https://www.tbe20.com" style="color: #3d7ab0; text-decoration: none; font-weight: 500;">www.tbe20.com</a></td>
+            </tr>
+            <tr>
+              <td style="padding-right: 6px; color: #3d7ab0; font-size: 11px;">&#128205;</td>
+              <td style="color: #9ca3af;">Eichhornstraße 23, 78464 Konstanz</td>
+            </tr>
+          </table>
+
+          <!-- Tagline -->
+          <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #f3f4f6;">
+            <span style="font-size: 10px; color: #9ca3af; font-style: italic;">
+              Dynamics 365 &middot; Salesforce &middot; CRM-Beratung &middot; Dokumenten-Digitalisierung
+            </span>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Rechtlicher Hinweis -->
+    <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #f3f4f6; font-size: 9px; color: #c9cdd3; line-height: 1.5; font-family: 'Segoe UI', Arial, sans-serif;">
+      TBe20 Solutions GmbH &middot; Eichhornstraße 23, 78464 Konstanz &middot;
+      AG Freiburg i. Br. HRB 730866 &middot; GF: Thaddäus Bohne &middot;
+      USt-IdNr.: DE 334907433
+    </div>
+    <!-- =====================================================
+         BIS HIER KOPIEREN
+         ===================================================== -->
+  </div>
+
+  <p class="hint">
+    <strong>Anleitung:</strong> Den Bereich zwischen den Kommentaren kopieren und in den
+    E-Mail-Client als HTML-Signatur einfügen.<br>
+    <strong>Outlook:</strong> Datei &rarr; Optionen &rarr; E-Mail &rarr; Signaturen &rarr; HTML bearbeiten<br>
+    <strong>Gmail:</strong> Einstellungen &rarr; Alle Einstellungen &rarr; Signatur &rarr; Einfügen (Strg+V)<br>
+    <strong>Tipp:</strong> Einfach die Signatur in der Vorschau oben markieren (Strg+A im Bereich),
+    kopieren und direkt in die Signatur-Einstellungen einfügen.
+  </p>
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Palette, Type, X } from 'lucide-react'
+import { Palette, Type, X, Shuffle } from 'lucide-react'
 
 const colorThemes = [
   { id: 'default', name: 'Stahlblau', color: '#3d7ab0' },
-  { id: 'sky', name: 'Himmelblau', color: '#2389e3' },
+  { id: 'red', name: 'Stahlrot', color: '#a63d3d' },
   { id: 'ocean', name: 'Ozean', color: '#1b5fad' },
   { id: 'charcoal', name: 'Anthrazit', color: '#4e5d6e' },
   { id: 'petrol', name: 'Petrol', color: '#2a7278' },
@@ -17,17 +17,24 @@ const fontThemes = [
   { id: 'prometo', name: 'ZF Prometo' },
 ]
 
+function getRandomTheme() {
+  return colorThemes[Math.floor(Math.random() * colorThemes.length)].id
+}
+
 export function ThemeSwitcher() {
   const [open, setOpen] = useState(false)
   const [activeColor, setActiveColor] = useState('default')
   const [activeFont, setActiveFont] = useState('inter')
 
   useEffect(() => {
-    const savedColor = localStorage.getItem('tbe20-theme') || 'default'
     const savedFont = localStorage.getItem('tbe20-font') || 'inter'
-    setActiveColor(savedColor)
+
+    // Bei jedem Laden: zufälliges Farbschema
+    const color = getRandomTheme()
+
+    setActiveColor(color)
     setActiveFont(savedFont)
-    applyTheme(savedColor, savedFont)
+    applyTheme(color, savedFont)
   }, [])
 
   function applyTheme(color: string, font: string) {
@@ -47,8 +54,17 @@ export function ThemeSwitcher() {
 
   function setColor(id: string) {
     setActiveColor(id)
-    localStorage.setItem('tbe20-theme', id)
     applyTheme(id, activeFont)
+  }
+
+  function shuffleColor() {
+    let newColor = getRandomTheme()
+    // Ensure we get a different color
+    while (newColor === activeColor && colorThemes.length > 1) {
+      newColor = getRandomTheme()
+    }
+    setActiveColor(newColor)
+    applyTheme(newColor, activeFont)
   }
 
   function setFont(id: string) {
@@ -85,9 +101,19 @@ export function ThemeSwitcher() {
           <div className="p-5 space-y-5">
             {/* Color schemes */}
             <div>
-              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                Farbschema
-              </p>
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Farbschema
+                </p>
+                <button
+                  onClick={shuffleColor}
+                  className="flex items-center gap-1 text-[10px] font-medium text-primary-500 hover:text-primary-600 transition-colors"
+                  title="Zufällige Farbe"
+                >
+                  <Shuffle className="w-3 h-3" />
+                  Zufall
+                </button>
+              </div>
               <div className="grid grid-cols-3 gap-2">
                 {colorThemes.map((t) => (
                   <button
@@ -133,7 +159,7 @@ export function ThemeSwitcher() {
             </div>
 
             <p className="text-[10px] text-gray-400 text-center">
-              Nur zur Vorschau &ndash; wird im Browser gespeichert
+              Farbe wechselt bei jedem Seitenaufruf
             </p>
           </div>
         </div>

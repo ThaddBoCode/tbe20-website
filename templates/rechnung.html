@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TBe20 Solutions GmbH – Rechnung</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+      color: #1f2937;
+      font-size: 10pt;
+      line-height: 1.5;
+      background: white;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      position: relative;
+      padding: 0;
+    }
+
+    /* ── Kopfzeile ── */
+    .header {
+      padding: 25mm 25mm 8mm 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #3d7ab0;
+    }
+
+    .logo-sub {
+      font-size: 7.5pt;
+      color: #6b7280;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 8pt;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    .header-line {
+      margin: 0 25mm;
+      height: 2px;
+      background: linear-gradient(90deg, #3d7ab0, #6096c0, transparent);
+    }
+
+    /* ── Seitenrand-Akzent ── */
+    .side-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3mm;
+      height: 100%;
+      background: linear-gradient(180deg, #3d7ab0 0%, #6096c0 40%, transparent 70%);
+    }
+
+    /* ── Absender & Empfänger ── */
+    .sender-line {
+      margin: 10mm 25mm 0 25mm;
+      font-size: 7pt;
+      color: #9ca3af;
+      text-decoration: underline;
+      letter-spacing: 0.3px;
+    }
+
+    .addresses {
+      margin: 4mm 25mm 0 25mm;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .recipient {
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+    .recipient .placeholder {
+      color: #d1d5db;
+      font-style: italic;
+    }
+
+    .invoice-meta {
+      text-align: right;
+      font-size: 9pt;
+      color: #6b7280;
+      line-height: 1.8;
+    }
+
+    .invoice-meta strong {
+      color: #374151;
+    }
+
+    /* ── Rechnungstitel ── */
+    .invoice-title {
+      margin: 10mm 25mm 0 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .invoice-title h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .invoice-number {
+      font-size: 10pt;
+      color: #3d7ab0;
+      font-weight: 600;
+    }
+
+    /* ── Einleitungstext ── */
+    .intro {
+      margin: 6mm 25mm 0 25mm;
+      font-size: 10pt;
+      color: #6b7280;
+    }
+
+    /* ── Tabelle ── */
+    .invoice-table {
+      margin: 6mm 25mm 0 25mm;
+      width: calc(100% - 50mm);
+      border-collapse: collapse;
+      font-size: 9.5pt;
+    }
+
+    .invoice-table thead th {
+      background: #f8fafc;
+      color: #6b7280;
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3mm 3mm;
+      text-align: left;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .invoice-table thead th:nth-child(2) {
+      text-align: center;
+    }
+
+    .invoice-table thead th:nth-child(3),
+    .invoice-table thead th:nth-child(4) {
+      text-align: right;
+    }
+
+    .invoice-table tbody td {
+      padding: 3mm 3mm;
+      border-bottom: 1px solid #f3f4f6;
+      vertical-align: top;
+    }
+
+    .invoice-table tbody td:nth-child(2) {
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .invoice-table tbody td:nth-child(3),
+    .invoice-table tbody td:nth-child(4) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .item-title {
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .item-desc {
+      font-size: 8.5pt;
+      color: #9ca3af;
+      margin-top: 1mm;
+    }
+
+    .placeholder-row {
+      color: #d1d5db;
+      font-style: italic;
+    }
+
+    /* ── Summen ── */
+    .totals {
+      margin: 0 25mm 0 auto;
+      width: 70mm;
+      margin-right: 25mm;
+    }
+
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 2mm 0;
+      font-size: 9.5pt;
+      color: #6b7280;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .totals-row.total-line {
+      border-top: 2px solid #3d7ab0;
+      margin-top: 2mm;
+      padding-top: 3mm;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* ── Zahlungsinformationen ── */
+    .payment-info {
+      margin: 10mm 25mm 0 25mm;
+      padding: 5mm 6mm;
+      background: #f8fafc;
+      border-radius: 2mm;
+      border-left: 3px solid #3d7ab0;
+    }
+
+    .payment-info h3 {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2mm;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 8mm;
+      font-size: 9pt;
+    }
+
+    .payment-grid dt {
+      color: #9ca3af;
+    }
+
+    .payment-grid dd {
+      color: #374151;
+      font-weight: 500;
+    }
+
+    /* ── Hinweistext ── */
+    .notes {
+      margin: 8mm 25mm 0 25mm;
+      font-size: 9pt;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    /* ── Fußzeile ── */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 25mm 12mm 25mm;
+    }
+
+    .footer-line {
+      height: 1px;
+      background: #e5e7eb;
+      margin-bottom: 4mm;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .footer-content strong {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; }
+    }
+
+    @media screen {
+      body { background: #f3f4f6; padding: 20px; }
+      .page { box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="side-accent"></div>
+
+    <!-- Kopfzeile -->
+    <div class="header">
+      <div>
+        <div class="logo">TBe<span>20</span></div>
+        <div class="logo-sub">Solutions GmbH</div>
+      </div>
+      <div class="header-right">
+        Thaddäus Bohne<br>
+        Eichhornstraße 23<br>
+        78464 Konstanz<br>
+        info@tbe20.com
+      </div>
+    </div>
+
+    <div class="header-line"></div>
+
+    <!-- Absender & Empfänger -->
+    <div class="sender-line">
+      TBe20 Solutions GmbH · Eichhornstraße 23 · 78464 Konstanz
+    </div>
+
+    <div class="addresses">
+      <div class="recipient">
+        <span class="placeholder">Firma</span><br>
+        <span class="placeholder">Ansprechpartner</span><br>
+        <span class="placeholder">Straße Hausnummer</span><br>
+        <span class="placeholder">PLZ Ort</span>
+      </div>
+      <div class="invoice-meta">
+        <strong>Rechnungsdatum:</strong> <span class="placeholder" style="color:#d1d5db; font-style:italic;">TT.MM.JJJJ</span><br>
+        <strong>Leistungszeitraum:</strong> <span class="placeholder" style="color:#d1d5db; font-style:italic;">MM/JJJJ</span><br>
+        <strong>Zahlungsziel:</strong> 14 Tage netto<br>
+        <strong>Kundennummer:</strong> <span class="placeholder" style="color:#d1d5db; font-style:italic;">K-0001</span>
+      </div>
+    </div>
+
+    <!-- Rechnungstitel -->
+    <div class="invoice-title">
+      <h1>Rechnung</h1>
+      <div class="invoice-number">Nr. RE-2026-001</div>
+    </div>
+
+    <!-- Einleitung -->
+    <div class="intro">
+      Für die im genannten Zeitraum erbrachten Leistungen erlaube ich mir, wie folgt abzurechnen:
+    </div>
+
+    <!-- Positionen -->
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th style="width: 55%;">Beschreibung</th>
+          <th style="width: 10%;">Menge</th>
+          <th style="width: 17%;">Einzelpreis</th>
+          <th style="width: 18%;">Gesamt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-title">CRM-Beratung Dynamics 365</div>
+            <div class="item-desc">Anforderungsanalyse und Konzeption</div>
+          </td>
+          <td>8 Tage</td>
+          <td>1.200,00 &euro;</td>
+          <td>9.600,00 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-title">Customizing & Konfiguration</div>
+            <div class="item-desc">Anpassung Sales-Modul nach Spezifikation</div>
+          </td>
+          <td>5 Tage</td>
+          <td>1.200,00 &euro;</td>
+          <td>6.000,00 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-title">Anwenderschulung</div>
+            <div class="item-desc">Schulung Vertriebsteam (12 Teilnehmer)</div>
+          </td>
+          <td>2 Tage</td>
+          <td>1.200,00 &euro;</td>
+          <td>2.400,00 &euro;</td>
+        </tr>
+        <tr class="placeholder-row">
+          <td><em>Weitere Position...</em></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Summen -->
+    <div class="totals">
+      <div class="totals-row">
+        <span>Nettobetrag</span>
+        <span>18.000,00 &euro;</span>
+      </div>
+      <div class="totals-row">
+        <span>USt. 19 %</span>
+        <span>3.420,00 &euro;</span>
+      </div>
+      <div class="totals-row total-line">
+        <span>Gesamtbetrag</span>
+        <span>21.420,00 &euro;</span>
+      </div>
+    </div>
+
+    <!-- Zahlungsinformationen -->
+    <div class="payment-info">
+      <h3>Bankverbindung</h3>
+      <dl class="payment-grid">
+        <dt>Kontoinhaber:</dt>
+        <dd>TBe20 Solutions GmbH</dd>
+        <dt>IBAN:</dt>
+        <dd style="color:#d1d5db; font-style:italic;">DE00 0000 0000 0000 0000 00</dd>
+        <dt>BIC:</dt>
+        <dd style="color:#d1d5db; font-style:italic;">XXXXXXXX</dd>
+        <dt>Bank:</dt>
+        <dd style="color:#d1d5db; font-style:italic;">Bankname</dd>
+      </dl>
+    </div>
+
+    <!-- Hinweis -->
+    <div class="notes">
+      Bitte überweisen Sie den Gesamtbetrag unter Angabe der Rechnungsnummer innerhalb von 14 Tagen.
+      Vielen Dank für die Zusammenarbeit.
+    </div>
+
+    <!-- Fußzeile -->
+    <div class="footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div>
+          <strong>TBe20 Solutions GmbH</strong><br>
+          Eichhornstraße 23, 78464 Konstanz<br>
+          info@tbe20.com · www.tbe20.com
+        </div>
+        <div>
+          <strong>Registergericht</strong><br>
+          Amtsgericht Freiburg i. Br.<br>
+          HRB 730866
+        </div>
+        <div>
+          <strong>Geschäftsführer</strong><br>
+          Thaddäus Bohne<br>
+          USt-IdNr.: DE 334907433
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

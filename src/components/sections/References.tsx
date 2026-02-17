@@ -10,7 +10,7 @@ const references = [
     name: 'ZF Friedrichshafen AG',
     type: 'Langjähriges Kundenprojekt · 10+ Jahre',
     description:
-      'Aufbau und langjährige Betreuung der Microsoft Dynamics 365 CRM-Lösung bei einem der weltweit größten Automobilzulieferer (160.000+ Mitarbeiter, 46 Mrd. EUR Umsatz). Aktuell: Migration der Automotive Solution von Dynamics 365 nach Salesforce.',
+      'Langjährige Betreuung und Weiterentwicklung der CRM-Lösung bei einem der weltweit führenden Automobilzulieferer. Erfahrung mit CRM-Einführung, Systemerweiterung und Plattform-Migrationen.',
     icon: Car,
     highlight: true,
   },
@@ -28,12 +28,12 @@ const experience = [
   {
     name: 'ORBIS SE',
     description:
-      'Projekterfahrung als Dynamics 365 Consultant bei Deutschlands Microsoft Partner of the Year.',
+      'Freiberufliche Projekterfahrung als Dynamics 365 Consultant bei Deutschlands Microsoft Partner of the Year.',
   },
   {
     name: 'BE-terna',
     description:
-      'Projekterfahrung bei einem der führenden europäischen Microsoft Business Software Partner mit über 1.100 Beratern.',
+      'Freiberufliche Projekterfahrung bei einem der führenden europäischen Microsoft Business Software Partner.',
   },
 ]
 

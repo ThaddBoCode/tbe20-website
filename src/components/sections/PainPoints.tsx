@@ -20,7 +20,7 @@ const painPoints = [
     description:
       'Der erfahrene Partner gewinnt den Auftrag, aber umgesetzt wird von Junioren, die Ihr Geschäft nicht kennen.',
     solution:
-      'Ich bin Ihr einziger Ansprechpartner &ndash; von der Analyse bis zur Schulung. Immer der gleiche erfahrene Berater.',
+      'Ich bin Ihr fester Ansprechpartner &ndash; von der Analyse bis zur Schulung. Bei Bedarf greife ich auf mein Netzwerk aus erfahrenen CRM-Spezialisten zurück, ohne dass Sie auf persönliche Betreuung verzichten.',
   },
   {
     icon: Clock,

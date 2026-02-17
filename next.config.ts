@@ -1,10 +1,11 @@
 import type { NextConfig } from 'next'
 
-const basePath = '/tbe20-website'
+const isGithubPages = process.env.GITHUB_PAGES === 'true'
+const basePath = isGithubPages ? '/tbe20-website' : ''
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath,
+  basePath: basePath || undefined,
   images: {
     unoptimized: true,
   },

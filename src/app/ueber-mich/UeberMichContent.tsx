@@ -13,6 +13,7 @@ import {
   Car,
   GraduationCap,
   MapPin,
+  Network,
   Target,
   Users,
   Zap,
@@ -22,7 +23,12 @@ const values = [
   {
     icon: Users,
     title: 'Persönlich',
-    description: 'Sie arbeiten immer direkt mit mir. Kein Weiterreichen an Junior-Berater.',
+    description: 'Sie arbeiten immer direkt mit mir als festem Ansprechpartner. Kein Weiterreichen an Junior-Berater.',
+  },
+  {
+    icon: Network,
+    title: 'Starkes Netzwerk',
+    description: 'Bei Bedarf greife ich auf ein Netzwerk aus erfahrenen Dynamics 365 Beratern und Entwicklern zurück \u2013 so kann ich auch größere Projekte stemmen.',
   },
   {
     icon: Zap,
@@ -47,22 +53,22 @@ const milestones = [
   {
     period: '10+ Jahre',
     title: 'ZF Friedrichshafen AG',
-    role: 'Dynamics 365 & Salesforce CRM Projekt',
-    description: 'Langjährige Betreuung eines Großprojekts bei einem der weltweit größten Automobilzulieferer (160.000+ Mitarbeiter, 46 Mrd. EUR Umsatz). Aufbau der CRM-Lösung in Dynamics 365, aktuell Migration der Automotive Solution nach Salesforce.',
+    role: 'CRM-Projekt (Dynamics 365 & Salesforce)',
+    description: 'Langjährige Betreuung der CRM-Lösung bei einem der weltweit führenden Automobilzulieferer. Erfahrung mit CRM-Einführung, Weiterentwicklung und Plattform-Migrationen.',
     icon: Car,
   },
   {
     period: 'Zuvor',
     title: 'ORBIS SE',
-    role: 'Dynamics 365 Consultant',
-    description: 'Projekterfahrung bei Deutschlands Microsoft Partner of the Year. Über 950 Mitarbeiter, zahlreiche Großprojekte in der Industrie.',
+    role: 'Freiberuflicher Dynamics 365 Consultant',
+    description: 'Freiberufliche Projekterfahrung bei Deutschlands Microsoft Partner of the Year. Zahlreiche Großprojekte in der Industrie.',
     icon: Award,
   },
   {
     period: 'Zuvor',
     title: 'BE-terna',
-    role: 'Dynamics 365 Consultant',
-    description: 'Projekterfahrung bei einem der führenden europäischen Microsoft-Partner mit über 1.100 Beratern an 28 Standorten.',
+    role: 'Freiberuflicher Dynamics 365 Consultant',
+    description: 'Freiberufliche Projekterfahrung bei einem der führenden europäischen Microsoft-Partner.',
     icon: Award,
   },
   {
@@ -211,7 +217,7 @@ export function UeberMichContent() {
               Die Erfahrung von Top-Beratungshäusern und einem DAX-Zulieferer, kombiniert mit der Agilität und Nähe eines persönlichen Beraters.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}

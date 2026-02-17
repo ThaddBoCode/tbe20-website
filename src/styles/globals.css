@@ -2,20 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* ── ZF Prometo (lokaler Font) ───────────────── */
 @font-face {
   font-family: 'ZF Prometo';
-  src: url('/tbe20-website/fonts/ZFPrometo-Light.woff2') format('woff2'),
-       url('/tbe20-website/fonts/ZFPrometo-Light.woff') format('woff');
+  src: url('../fonts/ZFPrometo-Light.woff2') format('woff2'),
+       url('../fonts/ZFPrometo-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ZF Prometo';
-  src: url('/tbe20-website/fonts/ZFPrometo-Medium.woff2') format('woff2'),
-       url('/tbe20-website/fonts/ZFPrometo-Medium.woff') format('woff');
+  src: url('../fonts/ZFPrometo-Medium.woff2') format('woff2'),
+       url('../fonts/ZFPrometo-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -69,18 +70,18 @@ body {
 
 /* Stahlblau (Standard – keine Overrides nötig, passt zum Profilbild-Sakko) */
 
-/* Himmelblau – heller, wie der Foto-Hintergrund */
-[data-theme="sky"] {
-  --color-primary-50: #f0f7ff;
-  --color-primary-100: #e0efff;
-  --color-primary-200: #b9dafe;
-  --color-primary-300: #7cbffc;
-  --color-primary-400: #4ba3f5;
-  --color-primary-500: #2389e3;
-  --color-primary-600: #1a6ec2;
-  --color-primary-700: #17589e;
-  --color-primary-800: #154a82;
-  --color-primary-900: #133c6b;
+/* Stahlrot – gedämpftes Rot, gleicher Ton wie Stahlblau */
+[data-theme="red"] {
+  --color-primary-50: #faf0f0;
+  --color-primary-100: #f2dada;
+  --color-primary-200: #e5b8b8;
+  --color-primary-300: #d48b8b;
+  --color-primary-400: #c06060;
+  --color-primary-500: #a63d3d;
+  --color-primary-600: #8a2f2f;
+  --color-primary-700: #702727;
+  --color-primary-800: #5c1f1f;
+  --color-primary-900: #481818;
 }
 
 /* Ozean – professionell, tiefblau */

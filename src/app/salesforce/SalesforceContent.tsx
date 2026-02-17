@@ -28,7 +28,7 @@ const coreServices = [
     title: 'CRM-Migration',
     badge: 'Aktuelles Projekt',
     description:
-      'Migration von Microsoft Dynamics 365 zu Salesforce &ndash; inkl. Datenmigration, Prozessanpassung und Change-Management. Aktuell im Einsatz bei der Automotive Solution bei ZF Friedrichshafen.',
+      'Migration von Microsoft Dynamics 365 zu Salesforce &ndash; inkl. Datenmigration, Prozessanpassung und Change-Management. Aktuell im Einsatz im Automotive-Umfeld bei einem führenden DAX-Zulieferer.',
     features: [
       'Dynamics 365 \u2192 Salesforce Migration',
       'Datenübernahme und -bereinigung',
@@ -88,7 +88,7 @@ const uniqueAdvantages = [
     icon: Car,
     title: 'Automotive-Expertise',
     description:
-      '10+ Jahre Automotive-CRM bei ZF Friedrichshafen. Branchenspezifisches Wissen, das direkt in Ihr Projekt einfließt.',
+      '10+ Jahre Automotive-CRM bei einem der weltweit führenden Automobilzulieferer. Branchenspezifisches Wissen, das direkt in Ihr Projekt einfließt.',
   },
   {
     icon: ShieldCheck,
@@ -175,8 +175,8 @@ export function SalesforceContent() {
             >
               Als einer der wenigen Berater, die <strong>beide CRM-Welten</strong> aus der Praxis kennen,
               unterstütze ich Sie bei Salesforce-Einführungen, CRM-Migrationen und der Integration
-              in Ihre bestehende IT-Landschaft. Aktuell im Einsatz: Migration der
-              Automotive Solution bei ZF Friedrichshafen von Dynamics 365 nach Salesforce.
+              in Ihre bestehende IT-Landschaft. Aktuell im Einsatz: CRM-Migration
+              im Automotive-Umfeld bei einem führenden DAX-Zulieferer.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

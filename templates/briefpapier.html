@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TBe20 Solutions GmbH – Briefpapier</title>
+  <style>
+    /* ── Druckoptimierung ── */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+      color: #1f2937;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      background: white;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      position: relative;
+      padding: 0;
+    }
+
+    /* ── Kopfzeile ── */
+    .header {
+      padding: 28mm 25mm 10mm 25mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #3d7ab0;
+    }
+
+    .logo-sub {
+      font-size: 7.5pt;
+      color: #6b7280;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 8pt;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    /* ── Dezente Linie unter Header ── */
+    .header-line {
+      margin: 0 25mm;
+      height: 2px;
+      background: linear-gradient(90deg, #3d7ab0, #6096c0, transparent);
+    }
+
+    /* ── Absender-Kurzzeile ── */
+    .sender-line {
+      margin: 12mm 25mm 0 25mm;
+      font-size: 7pt;
+      color: #9ca3af;
+      text-decoration: underline;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Empfänger ── */
+    .recipient {
+      margin: 4mm 25mm 0 25mm;
+      min-height: 27mm;
+      font-size: 10.5pt;
+      line-height: 1.5;
+      color: #374151;
+    }
+
+    .recipient .placeholder {
+      color: #d1d5db;
+      font-style: italic;
+    }
+
+    /* ── Datum & Referenz ── */
+    .meta-line {
+      margin: 10mm 25mm 0 25mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9pt;
+      color: #6b7280;
+    }
+
+    /* ── Betreff ── */
+    .subject {
+      margin: 8mm 25mm 0 25mm;
+      font-size: 12pt;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* ── Inhalt ── */
+    .content {
+      margin: 8mm 25mm 0 25mm;
+      font-size: 10.5pt;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .content p {
+      margin-bottom: 4mm;
+    }
+
+    .content .greeting {
+      margin-bottom: 6mm;
+    }
+
+    .content .signature-block {
+      margin-top: 12mm;
+    }
+
+    .content .signature-name {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .content .signature-role {
+      font-size: 9pt;
+      color: #6b7280;
+    }
+
+    /* ── Fußzeile ── */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0 25mm 12mm 25mm;
+    }
+
+    .footer-line {
+      height: 1px;
+      background: #e5e7eb;
+      margin-bottom: 4mm;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .footer-content strong {
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    /* ── Seitenrand-Akzent ── */
+    .side-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3mm;
+      height: 100%;
+      background: linear-gradient(180deg, #3d7ab0 0%, #6096c0 40%, transparent 70%);
+    }
+
+    @media print {
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; }
+    }
+
+    @media screen {
+      body { background: #f3f4f6; padding: 20px; }
+      .page { box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="side-accent"></div>
+
+    <!-- Kopfzeile -->
+    <div class="header">
+      <div>
+        <div class="logo">TBe<span>20</span></div>
+        <div class="logo-sub">Solutions GmbH</div>
+      </div>
+      <div class="header-right">
+        Thaddäus Bohne<br>
+        Eichhornstraße 23<br>
+        78464 Konstanz<br>
+        info@tbe20.com<br>
+        www.tbe20.com
+      </div>
+    </div>
+
+    <div class="header-line"></div>
+
+    <!-- Absenderzeile -->
+    <div class="sender-line">
+      TBe20 Solutions GmbH · Eichhornstraße 23 · 78464 Konstanz
+    </div>
+
+    <!-- Empfänger -->
+    <div class="recipient">
+      <span class="placeholder">Firma / Name</span><br>
+      <span class="placeholder">Straße Hausnummer</span><br>
+      <span class="placeholder">PLZ Ort</span>
+    </div>
+
+    <!-- Datum -->
+    <div class="meta-line">
+      <div></div>
+      <div>Konstanz, den <span class="placeholder" style="color: #d1d5db; font-style: italic;">TT.MM.JJJJ</span></div>
+    </div>
+
+    <!-- Betreff -->
+    <div class="subject">Betreff des Schreibens</div>
+
+    <!-- Inhalt -->
+    <div class="content">
+      <p class="greeting">Sehr geehrte Damen und Herren,</p>
+
+      <p>
+        hier kommt der Brieftext. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+
+      <div class="signature-block">
+        <p>Mit freundlichen Grüßen</p>
+        <br><br>
+        <p class="signature-name">Thaddäus Bohne</p>
+        <p class="signature-role">Geschäftsführer · TBe20 Solutions GmbH</p>
+      </div>
+    </div>
+
+    <!-- Fußzeile -->
+    <div class="footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div>
+          <strong>TBe20 Solutions GmbH</strong><br>
+          Eichhornstraße 23, 78464 Konstanz<br>
+          info@tbe20.com · www.tbe20.com
+        </div>
+        <div>
+          <strong>Registergericht</strong><br>
+          Amtsgericht Freiburg i. Br.<br>
+          HRB 730866
+        </div>
+        <div>
+          <strong>Geschäftsführer</strong><br>
+          Thaddäus Bohne<br>
+          USt-IdNr.: DE 334907433
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

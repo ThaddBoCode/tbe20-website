@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react'
 
 const highlights = [
   '10+ Jahre Automotive-Erfahrung (ZF Friedrichshafen)',
-  'Ex-ORBIS & BE-terna Consultant',
+  'Projekte bei ORBIS SE & BE-terna (freiberuflich)',
   'Kostenlose 30-Min Erstberatung',
 ]
 
